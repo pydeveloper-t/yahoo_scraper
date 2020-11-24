@@ -1,5 +1,5 @@
 !/bin/bash
-docker_image_name="api:yahoo"
+docker_image_name="parser:yahoo"
 sudo docker stop $(docker ps -a -q --filter ancestor=$docker_image_name)
 sudo docker rm $(docker ps -a -q --filter ancestor=$docker_image_name)
 sudo docker rmi -f $docker_image_name
