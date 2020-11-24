@@ -1,0 +1,5 @@
+__pycache__
+.pytest_cashe
+*.pyc
+*.log
+*.env

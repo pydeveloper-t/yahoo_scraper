@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "*"
+
+[packages]
+requests = "*"
+sqlalchemy = "*"
+pandas = "*"
+python-dotenv = "*"
+pymysql = "*"
+lxml = "*"
+
+[requires]
+python_version = "3.9"
