@@ -11,12 +11,14 @@ if __name__ == '__main__':
     parameters = parser.parse_args()
     company_name = parameters.company
     out_path = parameters.out
-
+    print(parameters)
+    print(f'Parameteres: company_name = {company_name} out_path = {out_path}')
     ya = Yahoo(connection=connection, output_folder=out_path)
     found_companies = ya.find_company_by_name(company_name=company_name)
     if found_companies.get('count'):
         company_symbol = found_companies['quotes'][0]['symbol']
         metadata = ya.get_company_metadata(company_symbol=company_symbol)
+        print(f'metadata: {metadata}')
         if not metadata['chart']['error']:
             start_date = metadata['chart']['result'][0]['meta']['firstTradeDate']
             finish_date = int(datetime.utcnow().timestamp())
