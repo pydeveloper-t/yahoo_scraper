@@ -1,6 +1,6 @@
 ﻿# Yahoo finance scraper
 
-The Scrapy based parser for crawling feefo.com
+The parser for scraping from Yahoo Finance an historical and news information
 
 
 
