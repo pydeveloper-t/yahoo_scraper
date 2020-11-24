@@ -11,8 +11,7 @@ if __name__ == '__main__':
     parameters = parser.parse_args()
     company_name = parameters.company
     out_path = parameters.out
-    print(parameters)
-    print(f'Parameteres: company_name = {company_name} out_path = {out_path}')
+    print(f'Start processing for company: {company_name} at {datetime.utcnow()}')
     ya = Yahoo(connection=connection, output_folder=out_path)
     found_companies = ya.find_company_by_name(company_name=company_name)
     if found_companies['quotes']:
@@ -29,6 +28,7 @@ if __name__ == '__main__':
             ya.save_data_to_db(type='historical', data=df)
             last_news = ya.get_last_news(company_symbol)
             ya.save_data_to_db(type='news', data=last_news)
+    print(f'Process was finished at {datetime.utcnow()}')
 
 
 
